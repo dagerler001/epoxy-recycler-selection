@@ -105,6 +105,11 @@ public class DefaultSelectionTracker<K> extends SelectionTracker<K> implements R
         mObservers.add(callback);
     }
 
+    @Override
+    public void removeObserver(@NonNull SelectionObserver<K> callback) {
+        checkArgument(callback != null);
+        mObservers.remove(callback);
+    }
     /**
      * @return true if there is a primary or previsional selection.
      */
@@ -603,9 +608,9 @@ public class DefaultSelectionTracker<K> extends SelectionTracker<K> implements R
 
         @Override
         public void onItemRangeChanged(int startPosition, int itemCount, @Nullable Object payload) {
-            if (!SelectionTracker.SELECTION_CHANGED_MARKER.equals(payload)) {
+           /* if (!SelectionTracker.SELECTION_CHANGED_MARKER.equals(payload)) {
                 mSelectionTracker.onDataSetChanged();
-            }
+            }*/
         }
 
         @Override

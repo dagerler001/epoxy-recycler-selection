@@ -116,6 +116,8 @@ public abstract class SelectionTracker<K> {
      */
     public abstract void addObserver(@NonNull SelectionObserver<K> observer);
 
+    public abstract void removeObserver(@NonNull SelectionObserver<K> observer);
+
     /** @return true if has a selection */
     public abstract boolean hasSelection();
 

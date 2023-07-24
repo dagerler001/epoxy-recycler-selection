@@ -44,6 +44,7 @@ abstract class ItemModel : ListModel<ItemModel.ViewHolder>() {
     }
 
     override fun unbind(holder: ViewHolder) {
+        observer?.let { selectionTracker?.removeObserver(it) }
     }
 
     private fun updateSelection(holder: ViewHolder) {

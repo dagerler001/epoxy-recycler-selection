@@ -104,7 +104,7 @@ public class EventBridge {
             mRunner.accept(new Runnable() {
                 @Override
                 public void run() {
-                    mAdapter.notifyItemChanged(position, SelectionTracker.SELECTION_CHANGED_MARKER);
+                    //mAdapter.notifyItemChanged(position, SelectionTracker.SELECTION_CHANGED_MARKER);
                 }
             });
         }
